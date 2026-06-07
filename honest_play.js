@@ -141,17 +141,19 @@ function sim(games, margin) {
 }
 
 // ---------------------------------------------------------------- cli
-const cmd = process.argv[2];
-if (cmd === 'sim') {
-  const games = parseInt(process.argv[3] || '50000', 10);
-  console.log(`Valid combos: ${COMBOS.length} | players: ${P.length} | win threshold teamOvr >= ${WIN_OVR}\n`);
-  for (const margin of [0, 0.5, 1.0, 2.0]) {
-    const r = sim(games, margin);
-    const exp = r.p > 0 ? (1 / r.p).toFixed(0) : '∞';
-    console.log(`margin=${margin.toFixed(1)}  win=${r.wins}/${r.played}  P(win)=${(r.p * 100).toFixed(3)}%  ~1 in ${exp} games  meanOvr=${r.meanOvr.toFixed(1)}  bestOvr=${r.best}  stuck=${r.stuck}`);
+if (require.main === module) {
+  const cmd = process.argv[2];
+  if (cmd === 'sim') {
+    const games = parseInt(process.argv[3] || '50000', 10);
+    console.log(`Valid combos: ${COMBOS.length} | players: ${P.length} | win threshold teamOvr >= ${WIN_OVR}\n`);
+    for (const margin of [0, 0.5, 1.0, 2.0]) {
+      const r = sim(games, margin);
+      const exp = r.p > 0 ? (1 / r.p).toFixed(0) : '∞';
+      console.log(`margin=${margin.toFixed(1)}  win=${r.wins}/${r.played}  P(win)=${(r.p * 100).toFixed(3)}%  ~1 in ${exp} games  meanOvr=${r.meanOvr.toFixed(1)}  bestOvr=${r.best}  stuck=${r.stuck}`);
+    }
+  } else {
+    console.log('usage: node honest_play.js sim [games]');
   }
-} else {
-  console.log('usage: node honest_play.js sim [games]');
 }
 
 module.exports = { teamOvr, winsFor, bestPlacement, decide, pool, teamsByEra, erasByTeam, POS, WIN_OVR };
