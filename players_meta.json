@@ -1,0 +1,18 @@
+{
+  "name": "players_flat.json",
+  "bucket": "project-4599904239656435772.firebasestorage.app",
+  "generation": "1780507501861935",
+  "metageneration": "2",
+  "contentType": "application/json",
+  "timeCreated": "2026-06-03T17:25:01.874Z",
+  "updated": "2026-06-03T21:48:35.287Z",
+  "storageClass": "REGIONAL",
+  "size": "363555",
+  "md5Hash": "I67T82j9EQ8bIVwFIO2ZTQ==",
+  "contentEncoding": "gzip",
+  "contentLanguage": "en",
+  "cacheControl": "public, max-age=86400",
+  "crc32c": "aiYcUQ==",
+  "etag": "CK+4rKnL65QDEAI=",
+  "downloadTokens": "c2e95d5f-7371-46da-bcd9-4c2a55dec8ab"
+}
