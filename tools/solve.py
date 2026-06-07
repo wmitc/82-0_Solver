@@ -1,5 +1,6 @@
-import json, itertools
-players=json.load(open("players_flat.json"))
+import json, itertools, os
+_DATA = os.path.join(os.path.dirname(__file__), "..", "data", "players_flat.json")
+players=json.load(open(_DATA))
 
 # ---- exact port of calculateTeamResult(players, testMode=False) ----
 W_PPG,W_RPG,W_APG,W_SPG,W_BPG = .46,.25,.18,.07,.04
