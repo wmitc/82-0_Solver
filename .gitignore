@@ -1,4 +1,5 @@
 node_modules/
 
-shot_*.png
-result_*.png
+# Ad-hoc recon/run screenshots land in the working dir; curated proofs live in images/
+*.png
+!images/*.png

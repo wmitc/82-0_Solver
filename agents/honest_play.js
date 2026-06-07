@@ -15,7 +15,7 @@
 const fs = require('fs');
 
 // ---------------------------------------------------------------- data + model
-const P = JSON.parse(fs.readFileSync(__dirname + '/players_flat.json', 'utf8'));
+const P = JSON.parse(fs.readFileSync(__dirname + '/../data/players_flat.json', 'utf8'));
 const POS = ['PG', 'SG', 'SF', 'PF', 'C'];
 const WIN_OVR = 109.5;                 // teamOvr at/above which wins === 82
 
