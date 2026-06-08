@@ -4,7 +4,7 @@ Automated solvers for the viral online game **[82-0.com](https://www.82-0.com)**
 basketball roster-building game where the goal is to assemble a five-player lineup
 strong enough to "go 82-0" (win all 82 games of a season).
 
-This repo contains two agents that both reach the perfect 82-0 record by very
+This repo contains two agents that both reach the perfect 82-0 record, albeit by
 different philosophies, plus the reverse-engineering and tooling behind them:
 
 - **Force-win agent** — guarantees 82-0 on the first try by controlling the game's randomness.
@@ -75,14 +75,14 @@ higher.** Anything below that rounds down to 81 wins or fewer (`min(teamOvr/110,
 also caps the curve, so there's no reward for overshooting the line). `teamOvr` is
 exactly the "pts" number the result screen shows.
 
-For reference, from our own results:
+For reference, from my own results:
 
 | `teamOvr` | Record | Notes |
 |----------:|:------:|-------|
 | 96.9 | 71-11 | a solid-but-losing lineup |
 | 104.1 | 77-5 | close, still short of the line |
 | 109.4 | 81-1 | *just* misses — one point of `teamOvr` away |
-| **109.7** | **82-0** | the honest-play win — barely over the line |
+| **109.7** | **82-0** | my first honest-play win — barely over the line |
 | 139.4 | 82-0 | the force-win agent, overshooting massively (capped at 82-0) |
 
 > Note: `teamOvr` depends only on the *set* of five players, not on which slot
@@ -193,7 +193,7 @@ node agents/honest_play.js sim [games]   # offline win-rate simulation (default 
 | Agent | Approach | Outcome |
 |-------|----------|---------|
 | Force-win | Override the RNG to force optimal spins | **82-0 guaranteed, first try** (`teamOvr` 139.4, grade S/PERFECT) |
-| Honest-play | Play by the rules, replay until lucky | **82-0 achieved live on game 13** (`teamOvr` 109.7, grade S/PERFECT); ~1 in 109 games (simulated) |
+| Honest-play | Play by the rules, replay until lucky | **82-0 achieved live on game 13** (`teamOvr` 109.7, grade S/PERFECT); ~1 win in 109 games is the best expected win rate (simulated) |
 
 ## Repository layout
 
@@ -220,6 +220,4 @@ npm install            # installs playwright-core
 ## Disclaimer
 
 This project is for **educational and research purposes** — reverse-engineering a
-client-side game to study its mechanics and build solver agents. 82-0.com is an
-independent project and is not affiliated with the NBA. Be respectful of the
-site and its terms of service.
+client-side game to study its mechanics and build solver agents.
