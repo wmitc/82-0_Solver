@@ -219,5 +219,5 @@ npm install            # installs playwright-core
 
 ## Disclaimer
 
-This project is for **educational and research purposes** — reverse-engineering a
+This project is for educational and research purposes -- reverse-engineering a
 client-side game to study its mechanics and build solver agents.
